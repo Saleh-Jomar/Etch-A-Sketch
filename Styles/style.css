@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
     height: 100vh;
     text-align: center;
+    box-sizing: border-box;
 }
 #title {
     font-size: 80px;
