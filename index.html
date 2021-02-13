@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="Styles/reset.css">
     <link rel="stylesheet" href="Styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lacquer&amp;family=Roboto&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,9 +15,14 @@
         <button>Rainbow</button>
         <button>Gray Scale</button>
         <button>Eraser</button>
-        <button>Pick</button>
+        <button>Pick:<input type="color" id="color-picker" value="#ff0000"></button>
     </div>
-    
+    <div class='grid-container'></div>
+    <div class= 'reset-container'>
+        <button id='create'>Create</button>
+        <input type="range" min="4" max="100" value="16" class="slider" id="slider">
+        <div id="slider-value"></div>
+    </div>
 </body>
-
 </html>
+<script src="Scripts/script.js"></script>
