@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Source+Sans+Pro&display=swap');
 body {
-    background-color: #F7efe5;
+    background-image: url(../Images/Fondo.jpeg);
     color: black;
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
     text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #title {
     font-size: 80px;
