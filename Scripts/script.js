@@ -8,6 +8,7 @@ const output = document.getElementById("slider-value");
 const create = document.getElementById('create');
 const colorButton = document.querySelectorAll('.color-button')
 const gridContainer = document.querySelector('.grid-container');
+const colorpicker = document.getElementById('color-picker');
 output.innerHTML = slider.value;
 pixelSize = slider.value;
 color = 'black';
@@ -50,5 +51,17 @@ function colorGrid(e){
             break;
         case 'eraser':
             this.setAttribute('style', 'background-color: white;');
+            break;
+        case 'rainbow':
+            let rainbow = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            this.setAttribute('style', `background-color: ${rainbow};`);
+            break;
+        case 'pick':
+            colorpick = colorpicker.value
+            colorpicker.oninput = () => {
+                colorpick = this.value
+            }
+            this.setAttribute('style', `background-color: ${colorpick};`)
+            break;
     }    
 }
