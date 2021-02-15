@@ -2,6 +2,7 @@ window.addEventListener('load',drawGrid)
 
 let pixelSize
 let color
+let mouseHold
 
 const slider = document.getElementById("slider");
 const output = document.getElementById("slider-value");
@@ -29,6 +30,7 @@ function drawGrid(){
     for (let i=0; i < (pixelSize*pixelSize); i++){
         const grid = document.createElement('div');
         grid.classList.add('grid');
+        grid.setAttribute('style', 'background-color: white;')
         gridContainer.appendChild(grid);
     }
     const grids = document.querySelectorAll('.grid');
@@ -44,21 +46,44 @@ create.onclick = () => {
     });
     drawGrid()
 }
+
+window.addEventListener('mousedown',()=>{
+    mouseHold = true;
+});
+window.addEventListener('mouseup',()=>{
+    mouseHold = false;
+});
+
 function colorGrid(e){
-    switch(color){
-        case 'black':
-            this.setAttribute('style', 'background-color: black;');
-            break;
-        case 'eraser':
-            this.setAttribute('style', 'background-color: white;');
-            break;
-        case 'rainbow':
-            let rainbow = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            this.setAttribute('style', `background-color: ${rainbow};`);
-            break;
-        case 'pick':
-            colorpick = colorpicker.value
-            this.setAttribute('style', `background-color: ${colorpick};`)
-            break;
-    }    
-}
+    if (mouseHold==true){
+        switch(color){
+            case 'black':
+                this.setAttribute('style', 'background-color: black;');
+                break;
+            case 'eraser':
+                this.setAttribute('style', 'background-color: white;');
+                break;
+            case 'rainbow':
+                let rainbow = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                this.setAttribute('style', `background-color: ${rainbow};`);
+                break;
+            case 'pick':
+                colorpick = colorpicker.value
+                this.setAttribute('style', `background-color: ${colorpick};`)
+                break;
+            case 'grayscale':
+                currentColor = this.getAttribute('style');
+                currentColorSub = currentColor.substr(0,28);
+                if (currentColorSub != 'background-color: rgba(0,0,0'){
+                    this.setAttribute('style',`background-color: rgba(0,0,0,0.1);`)
+                    return;
+                }
+                currentColorAlpha = currentColor.substr(29).slice(0,-2);
+                if (+currentColorAlpha<1){
+                    newAlpha = +currentColorAlpha+0.1;
+                    newAlpha = Math.round(newAlpha*10)/10;
+                    this.setAttribute('style', `background-color: rgba(0,0,0,${newAlpha});`);
+                }
+        }    
+    }
+}   
