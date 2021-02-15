@@ -58,9 +58,6 @@ function colorGrid(e){
             break;
         case 'pick':
             colorpick = colorpicker.value
-            colorpicker.oninput = () => {
-                colorpick = this.value
-            }
             this.setAttribute('style', `background-color: ${colorpick};`)
             break;
     }    
