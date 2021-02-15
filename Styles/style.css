@@ -59,7 +59,7 @@ input[type="color"]::-webkit-color-swatch {
     max-width: 750px;    
 }
 .reset-container {
-    margin: 30px auto;
+    margin: 30px auto 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,4 +101,9 @@ input[type="color"]::-webkit-color-swatch {
 .grid-container > * {
     background-color: #ffffff;
     transition: all 0.5s;
+}
+p {
+    margin-top: 10px;
+    font-family: 'Leckerli One', cursive;
+    font-size: 20px;
 }
