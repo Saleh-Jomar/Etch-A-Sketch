@@ -27,7 +27,7 @@ button {
     transition: all 0.4s ease;
 }
 #create {
-    background-color: #cae1d4;
+    background-color: #93B5A6;
 }
 button:hover {
     cursor: pointer;
@@ -80,7 +80,7 @@ input[type="color"]::-webkit-color-swatch {
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: #cae1d4;
+    background: #93B5A6;
     cursor: pointer;
 }
 #slider-value {
