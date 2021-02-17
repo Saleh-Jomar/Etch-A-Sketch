@@ -40,10 +40,7 @@ function drawGrid(){
 }
 
 create.onclick = () => {
-    const grids = document.querySelectorAll('.grid');
-    grids.forEach(div => {
-        gridContainer.removeChild(div);
-    });
+    gridContainer.innerHTML = '';
     drawGrid()
 }
 
